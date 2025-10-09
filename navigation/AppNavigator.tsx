@@ -15,41 +15,36 @@ type TabParamList = {
    More : undefined;
 }
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+
+const Tab = createBottomTabNavigator<TabParamList>();
 
 
-const AppNavigator:React.FC = () => {
+const AppNavigator: React.FC = () => {
   return (
-    <Tab.Navigator screenOptions={({
-       route,
-    } : {
-       route: RouteProp<TabParamList , keyof TabParamList>;
-    }) => ({
-       tabBarIcon : ({color , size}  : {color : string; size : number}) => {
-         let iconName: string = '';
-         if(route.name === 'Home') iconName = 'home';
-         else if(route.name === 'Play') iconName = 'person';
-         else if(route.name === 'Book') iconName = 'calendar';
-         else if(route.name === 'More') iconName = 'menu';
-
-         return <Ionicons name={iconName as any} size={size} color={color}/>
-       },
-       tabBarActiveTintColor : "#34C759",
-       tabBarInactiveTintColor : "#666666",
-    })}>
+    <Tab.Navigator
+      screenOptions={({
+        route,
+      }: {
+        route: RouteProp<TabParamList, keyof TabParamList>;
+      }) => ({
+        tabBarIcon: ({ color, size }: { color: string; size: number }) => {
+          let iconName: string = '';
+          if (route.name === 'Home') iconName = 'home';
+          else if (route.name === 'Play') iconName = 'person';
+          else if (route.name === 'Book') iconName = 'calendar';
+          else if (route.name === 'More') iconName = 'menu';
+          return <Ionicons name={iconName as any} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "#34C759",
+        tabBarInactiveTintColor: "#666666",
+      })}
+    >
 
        <Tab.Screen name="Home" component={HomeStackNavigator} options={{headerShown : false}}/>
-      
       <Tab.Screen name="Play" component={PlayStackNavigator} options={{headerShown : false}}/>
-
       <Tab.Screen name="Book" component={BookStackNavigator} options= {{headerShown : false}}/>
-
       <Tab.Screen name="More" component={ProfileScreen} options={{headerShown : false}}/>
-
-
-
-
-
     </Tab.Navigator>
   )
 }
