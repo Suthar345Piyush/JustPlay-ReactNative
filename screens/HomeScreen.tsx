@@ -35,27 +35,83 @@ const HomeScreen = () => {
             <Text className="text-3xl">➡️</Text>
           </View>
 
-          <View>
-            <Text>START PLAYING!</Text>
-            <View>
-              <Text>
-                Create Game
-              </Text>
-              <Text>
-                No upcoming games in your calendar
-              </Text>
+          {/* creating game card  */}
+
+          <View className="bg-white border border-gray-200 rounded-2xl p-4 mt-4 shadow-sm relative">
+            <Text className="font-semibold text-sm text-gray-400">START PLAYING!</Text>
+
+
+            <View className="flex-row items-center justify-between">
+              <View>
+              <Text className="text-xl font-semibold mt-2">Create Game</Text>
+              <Text className="text-base text-gray-500 mt-1">No upcoming games in your calendar</Text>
             </View>
-            <TouchableOpacity>
-              <Text>
-                Create
-              </Text>
+
+            <TouchableOpacity className="bg-white px-4 py-2 border border-gray-300 rounded-md ">
+              <Text className="text-base font-semibold">Create</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
-            <Text>
-              View My Calendar
-            </Text>
+
+
+          <TouchableOpacity className="mt-3 self-center">
+            <Text className="text-[#222] font-semibold underline text-base">View My Calendar</Text>
           </TouchableOpacity>
+        </View>
+
+        {/* groups & grouptime activities  */}
+
+         <View className="bg-[#F9FAFB] mt-5 rounded-2xl p-4 space-y-4">
+          <TouchableOpacity className="flex-row items-center justify-between">
+            <View className="flex-row items-center gap-3">
+              <View className="bg-green-100 p-2 rounded-full">
+                 <Text className="text-2xl">👥</Text>
+                 </View>
+
+                 <View>
+                  <Text className="font-semibold text-lg text-gray-800">Groups</Text>
+                  <Text className="text-sm text-gray-500">Connect, Compete and Discuss</Text>
+              </View>
+            </View>
+            <Text className="text-xl text-gray-400">➡️</Text>
+          </TouchableOpacity>
+
+
+          <TouchableOpacity className="flex-row items-center justify-between mt-6">
+            <View className="flex-row items-center gap-3">
+              <View className="bg-yellow-100 p-2 rounded-full">
+                 <Text className="text-xl">💡</Text>
+                 </View>
+
+                 <View>
+                  <Text className="font-semibold text-gray-800 text-lg">Game Time Activities</Text>
+                  <Text className="text-sm text-gray-500">410 justPlay hosted games</Text>
+                 </View>
+              </View>
+              <Text className="text-xl text-gray-400">➡️</Text>
+          </TouchableOpacity>
+         </View>
+
+
+         {/* bookings and playpals  */}
+
+         <View>
+          <TouchableOpacity>
+             <Text></Text>
+             <Text></Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text></Text>
+            <Text></Text>
+          </TouchableOpacity>
+         </View>
+
+
+         {/* spotlight  */}
+
+
+
+
+
         </ScrollView>
      </SafeAreaView>
   )
