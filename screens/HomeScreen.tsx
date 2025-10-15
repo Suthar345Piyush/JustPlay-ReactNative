@@ -164,6 +164,51 @@ const HomeScreen = () => {
               ))
             }
         </ScrollView>
+
+         <View className="items-center mt-5 mb-6">
+           <Text className="text-sm text-gray-500">FOLLOW US ON</Text>
+           <View className="flex-row gap-4 mt-2">
+            <Text className="text-lg">📷</Text>
+            <Text className="text-lg">🐤</Text>
+            <Text className="text-lg">💼</Text>
+           </View>
+         </View>
+
+         <View className='bg-[#F9FAFB] rounded-2xl p-4 mb-6 flex-row items-center'>
+           <View className="bg-gray-100 p-3 rounded-full mr-3">
+             <Text className='text-xl'>🎁</Text>
+           </View>
+           <View className="flex-1">
+            <Text className="font-semibold text-base ">Refer a Sports Enthusiast</Text>
+            <Text className='text-sm text-gray-600'>Earn <Text className='text-blue-500'>50 karma points</Text> by inviting your friends</Text>
+           </View>
+         </View>
+
+
+         <View className='items-center mb-10 mt-4'>
+           <Text className='text-2xl font-bold text-[#14b8a6]'>PLAYO</Text>
+           <Text className='text-sm text-gray-500 mt-1'>Your Sports Community App</Text>
+
+           <View className='flex-row items-center gap-1 mt-2'>
+
+            <TouchableOpacity>
+              <Text className='text-sm text-blue-500 underline'>Privacy Policy</Text>
+            </TouchableOpacity>
+        
+            <Text className='text-gray-400'>•</Text>
+
+            <TouchableOpacity>
+              <Text className='text-sm text-blue-500 underline'>Terms of Service</Text>
+            </TouchableOpacity>
+            
+            <Text className='text-gray-400'>•</Text>
+
+            <TouchableOpacity>
+              <Text className='text-sm text-blue-500 underline'>FAQ's</Text>
+            </TouchableOpacity>
+
+          </View>
+        </View>
         
     </ScrollView>
  </SafeAreaView>
