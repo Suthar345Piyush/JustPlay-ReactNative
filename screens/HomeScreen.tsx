@@ -4,6 +4,41 @@ import { useNavigation } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MessageCircle , Bell } from 'lucide-react-native';
 
+const spotlightData = [
+  {
+    id: "10",
+    image:
+      "https://playov2.gumlet.io/v3_homescreen/marketing_journey/Tennis%20Spotlight.png",
+    text: "Learn Tennis",
+    description: "Know more",
+  },
+  {
+    id: "11",
+    image:
+      "https://playov2.gumlet.io/v3_homescreen/marketing_journey/playo_spotlight_08.png",
+    text: "Up Your Game",
+    description: "Find a coach",
+  },
+  {
+    id: "12",
+    image:
+      "https://playov2.gumlet.io/v3_homescreen/marketing_journey/playo_spotlight_03.png",
+    text: "Hacks to win",
+    description: "Yes, Please!",
+  },
+  {
+    id: "13",
+    image:
+      "https://playov2.gumlet.io/v3_homescreen/marketing_journey/playo_spotlight_02.png",
+    text: "Spotify Playlist",
+    description: "Show more",
+  },
+];
+
+
+
+
+
 const HomeScreen = () => {
    const navigation = useNavigation();
 
@@ -94,14 +129,16 @@ const HomeScreen = () => {
 
          {/* bookings and playpals  */}
 
-         <View>
-          <TouchableOpacity>
-             <Text></Text>
-             <Text></Text>
+         <View className="flex-row justify-between mt-5">
+          <TouchableOpacity className="w-[48%] bg-white rounded-2xl border border-gray-200 p-4">
+             <Text className="font-semibold text-base text-black">Bookings</Text>
+             <Text className='text-sm text-gray-500'>Game History</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text></Text>
-            <Text></Text>
+
+
+          <TouchableOpacity className='w-[48%] bg-white rounded-2xl border border-gray-200 p-4'>
+            <Text className="font-semibold text-base text-black">PlayPals</Text>
+            <Text className="text-sm text-gray-500">Manage Players</Text>
           </TouchableOpacity>
          </View>
 
@@ -109,7 +146,25 @@ const HomeScreen = () => {
          {/* spotlight  */}
 
 
-
+         <Text className="text-xl font-bold mt-6 mb-2">SpotLight</Text>
+         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {
+              spotlightData.map((item , index) => (
+                <TouchableOpacity key={item.id} className="mr-4 bg-white rounded-xl w-48 overflow-hidden shadow-sm ">
+                  <Image source={{uri : item.image }} className="w-full h-56" resizeMode="cover"/>
+                  <View className='p-3'>
+                    <Text className='font-bold text-gray-800 text-base'>
+                      {item?.text}
+                    </Text>
+                    <Text className="text-sm text-gray-600">
+                      {item?.description}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))
+            }
+        </ScrollView>
+        
 
 
         </ScrollView>
