@@ -143,7 +143,7 @@ const HomeScreen = () => {
          </View>
 
 
-         {/* spotlight  */}
+         {/* Spotlight  */}
 
 
          <Text className="text-xl font-bold mt-6 mb-2">SpotLight</Text>
@@ -165,12 +165,10 @@ const HomeScreen = () => {
             }
         </ScrollView>
         
-
-
-        </ScrollView>
-     </SafeAreaView>
+    </ScrollView>
+ </SafeAreaView>
   )
 }
 
-export default HomeScreen
+export default HomeScreen;
 
